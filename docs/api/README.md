@@ -12,6 +12,7 @@ Welcome to the API documentation for the **Omnistore API** - a NestJS-based back
 - [Configuration](./configuration.md)
 - [Database](./database.md)
 - [Services](./services.md)
+- [**Developer Guide**](./DEVELOPER_GUIDE.md) - Complete guide with examples for all boilerplate features
 
 ## Overview
 
@@ -87,3 +88,4 @@ apps/api/
 2. [Configuration](./configuration.md) - Configure environment variables
 3. [Authentication](./authentication.md) - Understand the auth system
 4. [API Endpoints](./endpoints.md) - Explore available endpoints
+5. [**Developer Guide**](./DEVELOPER_GUIDE.md) - **Start here for development!** Complete guide with code examples

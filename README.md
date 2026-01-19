@@ -122,6 +122,7 @@ pnpm run dev
   - [API Endpoints](./docs/api/endpoints.md)
   - [Database](./docs/api/database.md)
   - [Services](./docs/api/services.md)
+  - [**Developer Guide**](./docs/api/DEVELOPER_GUIDE.md) ⭐ - Complete guide with code examples for all features
 
 ## 🛠️ Tech Stack
 
