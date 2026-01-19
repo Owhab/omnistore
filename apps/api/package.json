@@ -6,9 +6,13 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "dev": "nest start",
+    "build": "nest build",
+    "copy:templates": "copyfiles -u 1 src/templates/**/* dist/templates",
+    "setup": "bash ./setup.sh",
+    "setup:db": "bash ./setup-db.sh",
+    "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -17,7 +21,14 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js -d dist/database/data-source.js",
+    "migration:generate": "cross-var typeorm migration:create database/migrations/$pnpm_config_name",
+    "migration:run": "pnpm run typeorm migration:run",
+    "migration:revert": "pnpm run typeorm migration:revert",
+    "schema:drop": "pnpm run typeorm schema:drop",
+    "seed:generate": "cross-var typeorm-extension seed:create --name database/seeds/$pnpm_config_name",
+    "seed:run": "pnpm run build && typeorm-extension seed:run"
   },
   "dependencies": {
     "@nestjs-modules/mailer": "^2.0.2",
